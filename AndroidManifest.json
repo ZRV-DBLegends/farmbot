@@ -1,0 +1,665 @@
+{
+	"manifest": {
+		"uses-sdk": {
+			"_android:minSdkVersion": "23",
+			"_android:targetSdkVersion": "33"
+		},
+		"supports-screens": {
+			"_android:anyDensity": "true",
+			"_android:smallScreens": "true",
+			"_android:normalScreens": "true",
+			"_android:largeScreens": "true",
+			"_android:xlargeScreens": "true"
+		},
+		"uses-permission": [
+			{
+				"_android:name": "android.permission.RECEIVE_BOOT_COMPLETED"
+			},
+			{
+				"_android:name": "android.permission.ACCESS_WIFI_STATE"
+			},
+			{
+				"_android:name": "android.permission.ACCESS_NETWORK_STATE"
+			},
+			{
+				"_android:name": "com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"
+			},
+			{
+				"_android:name": "android.permission.READ_EXTERNAL_STORAGE",
+				"_android:maxSdkVersion": "32"
+			},
+			{
+				"_android:name": "android.permission.READ_MEDIA_IMAGES"
+			},
+			{
+				"_android:name": "android.permission.WRITE_EXTERNAL_STORAGE"
+			},
+			{
+				"_android:name": "android.permission.POST_NOTIFICATIONS"
+			},
+			{
+				"_android:name": "android.permission.INTERNET"
+			},
+			{
+				"_android:name": "android.permission.VIBRATE"
+			},
+			{
+				"_android:name": "android.permission.SCHEDULE_EXACT_ALARM"
+			},
+			{
+				"_android:name": "com.google.android.gms.permission.AD_ID"
+			},
+			{
+				"_android:name": "android.permission.CAMERA"
+			},
+			{
+				"_android:name": "android.permission.WAKE_LOCK"
+			},
+			{
+				"_android:name": "com.google.android.c2dm.permission.RECEIVE"
+			},
+			{
+				"_android:name": "com.godku.project.permission.C2D_MESSAGE"
+			},
+			{
+				"_android:name": "com.android.vending.BILLING"
+			},
+			{
+				"_android:name": "android.permission.SYSTEM_ALERT_WINDOW"
+			}
+		],
+		"uses-feature": [
+			{
+				"_android:name": "android.hardware.wifi",
+				"_android:required": "false"
+			},
+			{
+				"_android:glEsVersion": "30000"
+			},
+			{
+				"_android:name": "android.hardware.camera",
+				"_android:required": "false"
+			},
+			{
+				"_android:name": "android.hardware.camera.autofocus",
+				"_android:required": "false"
+			},
+			{
+				"_android:name": "android.hardware.camera.front",
+				"_android:required": "false"
+			},
+			{
+				"_android:name": "android.hardware.sensor.accelerometer",
+				"_android:required": "false"
+			},
+			{
+				"_android:name": "android.hardware.touchscreen",
+				"_android:required": "false"
+			},
+			{
+				"_android:name": "android.hardware.touchscreen.multitouch",
+				"_android:required": "false"
+			},
+			{
+				"_android:name": "android.hardware.touchscreen.multitouch.distinct",
+				"_android:required": "false"
+			}
+		],
+		"permission": {
+			"_android:name": "com.godku.project.permission.C2D_MESSAGE",
+			"_android:protectionLevel": "signature"
+		},
+		"queries": {
+			"intent": {
+				"action": {
+					"_android:name": "com.android.vending.billing.InAppBillingService.BIND"
+				}
+			}
+		},
+		"application": {
+			"service": [
+				{
+					"_android:name": "com.google.firebase.messaging.MessageForwardingService",
+					"_android:exported": "false"
+				},
+				{
+					"intent-filter": {
+						"action": {
+							"_android:name": "com.google.firebase.MESSAGING_EVENT"
+						}
+					},
+					"_android:name": "jp.co.dimps.trad.gcm.TRADNotificationService",
+					"_android:exported": "false"
+				},
+				{
+					"intent-filter": {
+						"action": {
+							"_android:name": "com.google.firebase.INSTANCE_ID_EVENT"
+						}
+					},
+					"_android:name": "com.growthpush.TokenRefreshService",
+					"_android:exported": "false"
+				},
+				{
+					"meta-data": [
+						{
+							"_android:name": "com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar",
+							"_android:value": "com.google.firebase.components.ComponentRegistrar"
+						},
+						{
+							"_android:name": "com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar",
+							"_android:value": "com.google.firebase.components.ComponentRegistrar"
+						},
+						{
+							"_android:name": "com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar",
+							"_android:value": "com.google.firebase.components.ComponentRegistrar"
+						},
+						{
+							"_android:name": "com.google.firebase.components:com.google.firebase.crashlytics.ndk.CrashlyticsNdkRegistrar",
+							"_android:value": "com.google.firebase.components.ComponentRegistrar"
+						},
+						{
+							"_android:name": "com.google.firebase.components:com.google.firebase.sessions.FirebaseSessionsRegistrar",
+							"_android:value": "com.google.firebase.components.ComponentRegistrar"
+						},
+						{
+							"_android:name": "com.google.firebase.components:com.google.firebase.iid.Registrar",
+							"_android:value": "com.google.firebase.components.ComponentRegistrar"
+						},
+						{
+							"_android:name": "com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar",
+							"_android:value": "com.google.firebase.components.ComponentRegistrar"
+						},
+						{
+							"_android:name": "com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar",
+							"_android:value": "com.google.firebase.components.ComponentRegistrar"
+						},
+						{
+							"_android:name": "com.google.firebase.components:com.google.firebase.crashlytics.FirebaseCrashlyticsKtxRegistrar",
+							"_android:value": "com.google.firebase.components.ComponentRegistrar"
+						},
+						{
+							"_android:name": "com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar",
+							"_android:value": "com.google.firebase.components.ComponentRegistrar"
+						},
+						{
+							"_android:name": "com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar",
+							"_android:value": "com.google.firebase.components.ComponentRegistrar"
+						},
+						{
+							"_android:name": "com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar",
+							"_android:value": "com.google.firebase.components.ComponentRegistrar"
+						}
+					],
+					"_android:name": "com.google.firebase.components.ComponentDiscoveryService",
+					"_android:exported": "false",
+					"_android:directBootAware": "true"
+				},
+				{
+					"meta-data": {
+						"_android:name": "backend:com.google.android.datatransport.cct.CctBackendFactory",
+						"_android:value": "cct"
+					},
+					"_android:name": "com.google.android.datatransport.runtime.backends.TransportBackendDiscovery",
+					"_android:exported": "false"
+				},
+				{
+					"_android:name": "com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService",
+					"_android:permission": "android.permission.BIND_JOB_SERVICE",
+					"_android:exported": "false"
+				},
+				{
+					"_android:name": "com.google.firebase.sessions.SessionLifecycleService",
+					"_android:enabled": "true",
+					"_android:exported": "false"
+				},
+				{
+					"_android:name": "com.google.android.gms.messaging.cpp.MessageForwardingService",
+					"_android:permission": "android.permission.BIND_JOB_SERVICE",
+					"_android:exported": "true"
+				},
+				{
+					"intent-filter": {
+						"action": {
+							"_android:name": "com.google.firebase.MESSAGING_EVENT"
+						}
+					},
+					"_android:name": "com.google.firebase.messaging.cpp.ListenerService",
+					"_android:exported": "false"
+				},
+				{
+					"_android:name": "com.google.firebase.messaging.cpp.RegistrationIntentService",
+					"_android:exported": "false"
+				},
+				{
+					"intent-filter": {
+						"action": {
+							"_android:name": "com.google.firebase.MESSAGING_EVENT"
+						},
+						"_android:priority": "-500"
+					},
+					"_android:name": "com.google.firebase.messaging.FirebaseMessagingService",
+					"_android:exported": "false",
+					"_android:directBootAware": "true"
+				},
+				{
+					"_android:name": "com.google.android.gms.auth.api.signin.RevocationBoundService",
+					"_android:permission": "com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION",
+					"_android:exported": "true",
+					"_android:visibleToInstantApps": "true"
+				},
+				{
+					"_android:name": "com.google.android.gms.measurement.AppMeasurementService",
+					"_android:enabled": "true",
+					"_android:exported": "false"
+				},
+				{
+					"_android:name": "com.google.android.gms.measurement.AppMeasurementJobService",
+					"_android:permission": "android.permission.BIND_JOB_SERVICE",
+					"_android:enabled": "true",
+					"_android:exported": "false"
+				},
+				{
+					"_android:name": "com.android.support.Launcher",
+					"_android:enabled": "true",
+					"_android:exported": "false",
+					"_android:stopWithTask": "true"
+				}
+			],
+			"receiver": [
+				{
+					"intent-filter": {
+						"action": [
+							{
+								"_android:name": "android.intent.action.BOOT_COMPLETED"
+							},
+							{
+								"_android:name": "android.intent.action.ACTION_LOCKED_BOOT_COMPLETED"
+							}
+						]
+					},
+					"_android:name": "jp.co.dimps.trad.gcm.TRADNotificationReceiver",
+					"_android:exported": "false",
+					"_android:process": ":remote",
+					"_android:directBootAware": "true"
+				},
+				{
+					"intent-filter": {
+						"action": {
+							"_android:name": "android.intent.action.LOCALE_CHANGED"
+						}
+					},
+					"_android:name": "jp.co.dimps.trad.common.TRADLocaleChangedReceiver",
+					"_android:exported": "false",
+					"_android:process": ":remote",
+					"_android:directBootAware": "true"
+				},
+				{
+					"intent-filter": {
+						"action": {
+							"_android:name": "com.android.vending.INSTALL_REFERRER"
+						}
+					},
+					"_android:name": "com.adjust.sdk.AdjustReferrerReceiver",
+					"_android:permission": "android.permission.INSTALL_PACKAGES",
+					"_android:exported": "true"
+				},
+				{
+					"intent-filter": {
+						"action": {
+							"_android:name": "com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED"
+						}
+					},
+					"_android:name": "com.facebook.CurrentAccessTokenExpirationBroadcastReceiver",
+					"_android:exported": "false"
+				},
+				{
+					"intent-filter": {
+						"action": {
+							"_android:name": "com.facebook.sdk.ACTION_CURRENT_AUTHENTICATION_TOKEN_CHANGED"
+						}
+					},
+					"_android:name": "com.facebook.AuthenticationTokenManager$CurrentAuthenticationTokenChangedBroadcastReceiver",
+					"_android:exported": "false"
+				},
+				{
+					"_android:name": "com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver",
+					"_android:exported": "false"
+				},
+				{
+					"intent-filter": {
+						"action": {
+							"_android:name": "com.google.android.c2dm.intent.RECEIVE"
+						}
+					},
+					"_android:name": "com.google.firebase.iid.FirebaseInstanceIdReceiver",
+					"_android:permission": "com.google.android.c2dm.permission.SEND",
+					"_android:exported": "true"
+				},
+				{
+					"_android:name": "com.google.android.gms.measurement.AppMeasurementReceiver",
+					"_android:enabled": "true",
+					"_android:exported": "false"
+				},
+				{
+					"_android:name": "com.unity.androidnotifications.UnityNotificationManager",
+					"_android:exported": "false"
+				},
+				{
+					"intent-filter": {
+						"action": {
+							"_android:name": "android.intent.action.BOOT_COMPLETED"
+						}
+					},
+					"_android:name": "com.unity.androidnotifications.UnityNotificationRestartReceiver",
+					"_android:enabled": "false",
+					"_android:exported": "false"
+				}
+			],
+			"provider": [
+				{
+					"meta-data": {
+						"_android:name": "android.support.FILE_PROVIDER_PATHS",
+						"_android:resource": "@xml/filepaths"
+					},
+					"_android:name": "androidx.core.content.FileProvider",
+					"_android:exported": "false",
+					"_android:authorities": "com.godku.project.fileprovider",
+					"_android:grantUriPermissions": "true"
+				},
+				{
+					"meta-data": {
+						"_android:name": "android.support.FILE_PROVIDER_PATHS",
+						"_android:resource": "@xml/unitywebview_file_provider_paths"
+					},
+					"_android:name": "androidx.core.content.FileProvider",
+					"_android:exported": "false",
+					"_android:authorities": "com.godku.project.unitywebview.fileprovider",
+					"_android:grantUriPermissions": "true"
+				},
+				{
+					"_android:name": "com.facebook.internal.FacebookInitProvider",
+					"_android:exported": "false",
+					"_android:authorities": "com.godku.project.FacebookInitProvider"
+				},
+				{
+					"_android:name": "com.google.firebase.provider.FirebaseInitProvider",
+					"_android:exported": "false",
+					"_android:authorities": "com.godku.project.firebaseinitprovider",
+					"_android:initOrder": "100",
+					"_android:directBootAware": "true"
+				},
+				{
+					"_android:name": "com.google.android.gms.games.provider.PlayGamesInitProvider",
+					"_android:exported": "false",
+					"_android:authorities": "com.godku.project.playgamesinitprovider",
+					"_android:initOrder": "99"
+				}
+			],
+			"meta-data": [
+				{
+					"_android:name": "com.growthpush.notification.icon",
+					"_android:resource": "@drawable/icon_push"
+				},
+				{
+					"_android:name": "unityplayer.SkipPermissionsDialog",
+					"_android:value": "true"
+				},
+				{
+					"_android:name": "com.facebook.sdk.ClientToken",
+					"_android:value": "@string/FaceBookClientToken"
+				},
+				{
+					"_android:name": "google_analytics_automatic_screen_reporting_enabled",
+					"_android:value": "false"
+				},
+				{
+					"_android:name": "unity.splash-mode",
+					"_android:value": "0"
+				},
+				{
+					"_android:name": "unity.splash-enable",
+					"_android:value": "true"
+				},
+				{
+					"_android:name": "unity.launch-fullscreen",
+					"_android:value": "true"
+				},
+				{
+					"_android:name": "notch.config",
+					"_android:value": "portrait|landscape"
+				},
+				{
+					"_android:name": "unity.auto-report-fully-drawn",
+					"_android:value": "true"
+				},
+				{
+					"_android:name": "com.google.android.gms.version",
+					"_android:value": "@integer/google_play_services_version"
+				},
+				{
+					"_android:name": "com.google.android.gms.games.version",
+					"_android:value": "@string/play_games_sdk_version"
+				},
+				{
+					"_android:name": "com.google.android.play.billingclient.version",
+					"_android:value": "5.2.1"
+				},
+				{
+					"_android:name": "reschedule_notifications_on_restart",
+					"_android:value": "true"
+				},
+				{
+					"_android:name": "com.unity.androidnotifications.exact_scheduling",
+					"_android:value": "0"
+				},
+				{
+					"_android:name": "com.google.android.gms.games.APP_ID",
+					"_android:value": "@string/app_id"
+				},
+				{
+					"_android:name": "com.google.android.gms.games.unityVersion",
+					"_android:value": "0.11.01"
+				},
+				{
+					"_android:name": "com.android.dynamic.apk.fused.modules",
+					"_android:value": "base"
+				},
+				{
+					"_android:name": "com.android.stamp.source",
+					"_android:value": "https://play.google.com/store"
+				},
+				{
+					"_android:name": "com.android.stamp.type",
+					"_android:value": "STAMP_TYPE_STANDALONE_APK"
+				},
+				{
+					"_android:name": "com.android.vending.splits",
+					"_android:resource": "@xml/splits0"
+				},
+				{
+					"_android:name": "com.android.vending.derived.apk.id",
+					"_android:value": "2"
+				}
+			],
+			"activity": [
+				{
+					"intent-filter": [
+						{
+							"category": [
+								{
+									"_android:name": "android.intent.category.LAUNCHER"
+								},
+								{
+									"_android:name": "android.intent.category.LEANBACK_LAUNCHER"
+								}
+							],
+							"action": {
+								"_android:name": "android.intent.action.MAIN"
+							}
+						},
+						{
+							"category": [
+								{
+									"_android:name": "android.intent.category.DEFAULT"
+								},
+								{
+									"_android:name": "android.intent.category.BROWSABLE"
+								}
+							],
+							"data": {
+								"_android:scheme": "lgndappw-UniversalLinks"
+							},
+							"action": {
+								"_android:name": "android.intent.action.VIEW"
+							}
+						}
+					],
+					"meta-data": [
+						{
+							"_android:name": "unityplayer.UnityActivity",
+							"_android:value": "true"
+						},
+						{
+							"_android:name": "notch_support",
+							"_android:value": "true"
+						}
+					],
+					"_android:label": "@string/app_name",
+					"_android:name": "jp.co.dimps.trad.common.TRADMainActivity",
+					"_android:exported": "true",
+					"_android:launchMode": "singleTask",
+					"_android:screenOrientation": "portrait",
+					"_android:configChanges": "mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|layoutDirection|fontScale",
+					"_android:hardwareAccelerated": "true",
+					"_android:resizeableActivity": "false"
+				},
+				{
+					"_android:theme": "@style/Theme.Translucent",
+					"_android:name": "com.growthpush.view.AlertActivity",
+					"_android:launchMode": "singleInstance",
+					"_android:configChanges": "keyboardHidden|orientation"
+				},
+				{
+					"_android:theme": "@style/Theme.Translucent.NoTitleBar.Fullscreen",
+					"_android:name": "com.facebook.unity.FBUnityLoginActivity",
+					"_android:configChanges": "mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"
+				},
+				{
+					"_android:theme": "@style/com_facebook_activity_theme",
+					"_android:label": "@string/app_name",
+					"_android:name": "com.facebook.FacebookActivity",
+					"_android:configChanges": "keyboard|keyboardHidden|orientation|screenLayout|screenSize"
+				},
+				{
+					"intent-filter": [
+						{
+							"category": [
+								{
+									"_android:name": "android.intent.category.DEFAULT"
+								},
+								{
+									"_android:name": "android.intent.category.BROWSABLE"
+								}
+							],
+							"action": {
+								"_android:name": "android.intent.action.VIEW"
+							}
+						},
+						{
+							"action": {
+								"_android:name": "android.intent.action.VIEW"
+							},
+							"category": [
+								{
+									"_android:name": "android.intent.category.DEFAULT"
+								},
+								{
+									"_android:name": "android.intent.category.BROWSABLE"
+								}
+							],
+							"data": {
+								"_android:scheme": "fbconnect",
+								"_android:host": "cct.com.godku.project"
+							}
+						}
+					],
+					"_android:name": "com.facebook.CustomTabActivity",
+					"_android:exported": "true"
+				},
+				{
+					"_android:theme": "@style/Theme.Translucent.NoTitleBar",
+					"_android:name": "com.google.android.gms.common.api.GoogleApiActivity",
+					"_android:exported": "false"
+				},
+				{
+					"_android:theme": "@style/Theme.PlayCore.Transparent",
+					"_android:name": "com.google.android.play.core.common.PlayCoreDialogWrapperActivity",
+					"_android:exported": "false",
+					"_android:stateNotNeeded": "true"
+				},
+				{
+					"_android:theme": "@style/Theme.Translucent.NoTitleBar",
+					"_android:name": "com.google.android.gms.auth.api.signin.internal.SignInHubActivity",
+					"_android:exported": "false",
+					"_android:excludeFromRecents": "true"
+				},
+				{
+					"meta-data": {
+						"_android:name": "instantapps.clients.allowed",
+						"_android:value": "true"
+					},
+					"_android:theme": "@style/Theme.Translucent.NoTitleBar.Fullscreen",
+					"_android:label": "GenericResolutionActivity",
+					"_android:name": "com.google.games.bridge.GenericResolutionActivity",
+					"_android:exported": "false"
+				},
+				{
+					"_android:theme": "@style/Theme.Games.Transparent",
+					"_android:name": "com.google.android.gms.games.internal.v2.resolution.GamesResolutionActivity",
+					"_android:exported": "false"
+				},
+				{
+					"_android:name": "com.facebook.CustomTabMainActivity"
+				},
+				{
+					"_android:theme": "@style/Theme.Translucent.NoTitleBar",
+					"_android:name": "com.android.billingclient.api.ProxyBillingActivity",
+					"_android:exported": "false",
+					"_android:configChanges": "keyboard|keyboardHidden|orientation|screenLayout|screenSize"
+				},
+				{
+					"_android:name": "com.unity3d.player.UnityPlayerActivity"
+				},
+				{
+					"_android:theme": "@style/Theme.Translucent.NoTitleBar.Fullscreen",
+					"_android:name": "com.google.games.bridge.NativeBridgeActivity"
+				}
+			],
+			"uses-library": {
+				"_android:name": "app-inputmapping",
+				"_android:required": "false"
+			},
+			"_android:theme": "@style/UnityThemeSelector",
+			"_android:label": "@string/app_name",
+			"_android:icon": "@mipmap/app_icon",
+			"_android:hardwareAccelerated": "true",
+			"_android:supportsRtl": "true",
+			"_android:banner": "@drawable/app_banner",
+			"_android:isGame": "true",
+			"_android:extractNativeLibs": "true",
+			"_android:usesCleartextTraffic": "true",
+			"_android:appComponentFactory": "androidx.core.app.CoreComponentFactory",
+			"_android:allowNativeHeapPointerTagging": "false"
+		},
+		"_xmlns:android": "http://schemas.android.com/apk/res/android",
+		"_android:versionCode": "336",
+		"_android:versionName": "5.5.1",
+		"_android:installLocation": "preferExternal",
+		"_android:compileSdkVersion": "23",
+		"_android:compileSdkVersionCodename": "6.0-2438415",
+		"_package": "com.godku.project",
+		"_platformBuildVersionCode": "23",
+		"_platformBuildVersionName": "6.0-2438415"
+	}
+}
