@@ -1,0 +1,13 @@
+==============================[ Development Status ]==============================
+[isReleased?]: False
+[farmbotVersion]: 3.0.953
+[ScreamVersion]: 9.017.1-8333
+[CodedBotsVersion]: Codedbots-v12.4
+[Supports]: IOS, Android, PC
+==================================ExtraVers[
+            "RPC": "2.71",                  
+            "IOS": "132.24.0008",            
+            "ZRVLogger": "7.13.021",             
+            "dblgnds.channel.or.jp": "9.2",
+            "AndroidSupport": "92.01"
+]
